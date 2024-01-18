@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User{
+  id Int @id @default(autoincrement())
+  createAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  email String @unique
+  hash String
+
+  name String?
+  testSubmissions TestSubmission[]
+
+  @@map("users")
+  
+}
+
+model TestSubmission{
+  id Int @id @default(autoincrement())
+  createAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  subject String
+  userId Int 
+  user User @relation(fields: [userId], references: [id])
+  answers String
+  score Int
+
+  @@map("testsubmissions")
+}

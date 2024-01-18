@@ -1,0 +1,24 @@
+your-nestjs-project
+|-- src
+|   |-- app.controller.ts
+|   |-- app.module.ts
+|   |-- app.service.ts
+|   |-- auth
+|   |   |-- auth.controller.ts
+|   |   |-- auth.module.ts
+|   |   |-- auth.service.ts
+|   |   |-- jwt.strategy.ts
+|   |   |-- local.strategy.ts
+|   |   |-- jwt-auth.guard.ts
+|   |-- main.ts
+|   |-- prisma
+|   |   |-- schema.prisma
+|   |-- user
+|       |-- user.entity.ts
+|       |-- user.module.ts
+|       |-- user.service.ts
+|-- .env
+|-- .env.example
+|-- package.json
+|-- tsconfig.json
+|-- README.md
